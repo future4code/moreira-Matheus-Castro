@@ -52,7 +52,7 @@ const informacoes = sobrePessoa(prompt("Qual o seu nome?"), prompt("Qual a sua i
 // 3
 
 /* function calculo(){
-	let x1 = Number(prompt("Insita um número"))
+	let x1 = Number(prompt("Insira um número"))
 	let x2 = Number(prompt("Insira outro número"))
 
 	console.log("Números inseridos:", x1, "e", x2)
@@ -69,12 +69,12 @@ const informacoes = sobrePessoa(prompt("Qual o seu nome?"), prompt("Qual a sua i
 	let multiplicacaoResultado = multiplicacao
 	console.log("Multiplicação:", multiplicacaoResultado)
 
-	let divisao = Number (x1 / x2)12
+	let divisao = Number(x1 / x2)
 	let divisaoResultado = divisao
 	console.log("Divisão:", divisaoResultado)
 
 }
-calculo() 
+calculo()  */
 
 // outra maneira
 
@@ -89,4 +89,15 @@ num1 = Number(prompt("digite 1"))
 num2 = Number(prompt("digite 2"))
 resultado = somaNumeros(num1,num2)
 console.log(resultado)
- */
+
+function somaNumeros(numero1, numero2){
+	const subtração = numero1 - numero2
+	
+	return soma
+}
+
+
+num1 = Number(prompt("digite 1"))
+num2 = Number(prompt("digite 2"))
+resultado = somaNumeros(num1,num2)
+console.log(resultado)
