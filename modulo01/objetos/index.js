@@ -57,7 +57,7 @@ console.log(minhaFuncao(pessoa, "altura")) // undefined */
 // --------------------------------------------------------------------------
 
 // 1 - 
-const pessoa = {
+/* const pessoa = {
     nome: "Matheus", 
     apelidos: ["Mat", "Theus", "math"]
     
@@ -65,9 +65,69 @@ const pessoa = {
 function imprimeMensagem(meusApelidos){
  console.log(`Eu sou ${meusApelidos.nome},  mas pode me chamar de: ${meusApelidos.apelidos}`)
 }
-// imprimeMensagem(pessoa)
+ imprimeMensagem(pessoa)
 
-const novosApelidos = {...pessoa, apelidos: ["Matheuszinho", "Matheuszao", "matt"]}
+const novosApelidos = {
+    ...pessoa,
+    apelidos: ["Matheuszinho", "Matheuszao", "matt"]
+}
 
 
-function imprimeMensagem(novosApelidos)
+ imprimeMensagem(novosApelidos) */
+
+/*  const pessoa1 = {
+     nome: "Matheus",
+     idade: 24,
+     profissao: "Estudante"
+     
+ }
+
+ const pessoa2 = {
+    nome: "Vitor",
+    idade: 20,
+    profissao: "Agricultor"
+ }
+
+ function sobreMim(info) {
+ let array= []
+ array.push(info.nome)
+ array.push(info.nome.length)
+ array.push(info.idade)
+ array.push(info.profissao)
+ array.push(info.profissao.length)
+
+ return array
+ }
+
+ console.log(sobreMim(pessoa1))
+ console.log(sobreMim(pessoa2)) */
+
+ //3 -
+
+let carrinho = []
+
+const fruta1 = {
+    nome: "maça",
+    disponibilidade: true
+}
+
+const fruta2 = {
+    nome: "goiaba",
+    disponibilidade: true
+}
+
+const fruta3 = {
+    nome: "laranja",
+    disponibilidade: true
+}
+
+function frutaSacolao(fruta){
+
+carrinho.push(fruta)
+
+}
+
+frutaSacolao(fruta1)
+frutaSacolao(fruta2)
+frutaSacolao(fruta3)
+console.log(carrinho)
