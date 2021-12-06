@@ -131,10 +131,12 @@ function checaRenovacaoRG() {
   const anoNascimento = Number(prompt("Qual o seu ano de nascimento?"))
   const anoID = Number(prompt("Em qual ano sua carteira foi emitida?"))
 
-  const pessoaAdolescente = (anoAtual - anoNascimento)
-  const tempoID = (pessoaAdolescente - anoID) >= 5
+  let tempoID = (anoAtual - anoID) >= 5 && (anoAtual - anoNascimento) <= 20
+  let tempoID1 = (anoAtual - anoID) >= 10 && (anoAtual - anoNascimento) >= 21 && (anoAtual - anoNascimento) <=50
+  let tempoID2 = (anoAtual - anoID) >= 15 && (anoAtual - anoNascimento) >= 50
+  console.log(tempoID || tempoID1 || tempoID2)
 
-  return tempoID
+  
 }
 
 // EXERCÍCIO 14
