@@ -111,13 +111,36 @@ while(quantidadeAtual < quantidadeTotal){
 imprimePares(arrayOriginal) */
 
 // d
-
+/* indice = 0
 function imprimeStrings(array){
-    const arrayStrings = []
+    
 
     for(let numero of array){
+      console.log("O elemento do índex", indice, "é:", numero )
 
+      indice++
     }
 
-
+    
 }
+imprimeStrings(arrayOriginal) */
+
+// e
+
+valorMaximo = 0
+valorMinimo = 10
+
+for (var i = 0; i < arrayOriginal.length; i++){
+  if( arrayOriginal[i] > valorMaximo){
+    valorMaximo = arrayOriginal[i]
+    
+  }
+  
+  if(arrayOriginal[i] < valorMinimo){
+    valorMinimo = arrayOriginal[i]
+  
+  }
+}
+
+console.log(valorMaximo)
+console.log(valorMinimo)
