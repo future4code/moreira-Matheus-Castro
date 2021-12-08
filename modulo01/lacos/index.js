@@ -68,7 +68,7 @@ while(quantidadeAtual < quantidadeTotal){
     // 2
 
 
-    const arrayOriginal = [2, 5, 6, 9, 10, 12]
+    const arrayOriginal = [2, 5, 6, 9, 10]
 
     // a
 
