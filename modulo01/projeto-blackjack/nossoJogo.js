@@ -14,7 +14,7 @@
     // 1
 
 
-
+/* 
     console.log("Boas vindas ao jogo Blackjack!")
 
    if(confirm("Quer iniciar uma nova rodada?")){
@@ -43,6 +43,6 @@
          } else {
       console.log("O jogo acabou")
    }
- 
+  */
 
 
