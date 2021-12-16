@@ -45,7 +45,7 @@ div img {
     font-size: 20px;
     color: white;
     margin-left: -400px;
-    margin-top: 70px;
+    margin-top: 75px;
 }
 
 .botao-amarelo:hover {
@@ -71,6 +71,7 @@ div img {
 #container-de-descricao {
     background-color: #2274a5;
     color: white;
+    padding-top: 30px;
 }
 
 #container-de-descricao>ol {
