@@ -46,6 +46,7 @@ div img {
     color: white;
     margin-left: -400px;
     margin-top: 75px;
+    position: absolute;
 }
 
 .botao-amarelo:hover {
@@ -72,10 +73,17 @@ div img {
     background-color: #2274a5;
     color: white;
     padding-top: 30px;
+
 }
 
 #container-de-descricao>ol {
     padding: 15px 0px;
+}
+
+#mensagem-empresa{
+    width: 180px;
+    height: 60px;
+    display: inline-block
 }
 
 #container-para-comprar {
@@ -89,6 +97,8 @@ div img {
     position: fixed;
     margin-top: -100px;
     margin-left: -540px;
+    
+
 }
 
 
@@ -105,6 +115,7 @@ div:last-child {
 
 table {
     width: 60%;
+    text-align: center;
 }
 
 td button {
