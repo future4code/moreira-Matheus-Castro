@@ -1,7 +1,5 @@
-.tabela{
-    background-color: gray;
-    width: 50px;
-    border : 20px;
-    font-weight: bold;
-
+.imagensRS{
+    width: 100px;
+    height: 20px;
+    object-fit: contain;
 }

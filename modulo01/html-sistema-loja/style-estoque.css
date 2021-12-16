@@ -1,0 +1,16 @@
+.tabela{
+    background-color: gray;
+    width: 150px;
+    font-weight: bold;
+    text-align: center;
+    font-size: 20px;
+}
+
+.h2-estoque{
+    text-align: center;
+}
+
+img {
+    width: 150px;
+    height: 150px;
+}

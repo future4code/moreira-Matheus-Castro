@@ -1,0 +1,20 @@
+
+
+.add-produtos{
+    background-color: lightblue;
+    font-weight: bold;
+    text-align: center;
+    font-size: xx-large;
+    width: 600px;
+    text-align: left;
+}
+
+.titulo-produto{
+    font-size: xx-large;
+    color: navy;
+}
+
+label {
+    width: 1000px;
+    display: inline-block;
+}
