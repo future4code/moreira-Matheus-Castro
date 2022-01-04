@@ -4,6 +4,12 @@
     margin: 0;
 }
 
+body{
+    display: flex;
+    flex-direction: column;
+    
+}
+
 header{
     border: 1px solid black;
     display: flex;
@@ -27,7 +33,7 @@ header{
 
 main{
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(4, 1fr);
     text-align: center;
     padding-top: 50px;
 }
@@ -44,10 +50,19 @@ main{
 }
 
 footer{
-    height: 80px;
-    background-color: lightgrey;
-    position:absolute;
+    border: 1px solid black;
+    align-items: center;
+    justify-content: space-between; 
+    height: 60px;
+    padding-left: 30px;
+    background-color: rgb(190, 159, 18);
+    position: absolute;
     bottom: 0px;
+    width: 100%;
+    text-align: center;
+    padding-top: 20px;
+    font-size: 20px;
+    font-weight: bold;
 }
 
 .videocofig{
