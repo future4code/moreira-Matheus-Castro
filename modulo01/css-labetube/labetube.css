@@ -1,0 +1,61 @@
+*{
+    padding: 0;
+    box-sizing: border-box;
+    margin: 0;
+}
+
+header{
+    border: 1px solid black;
+    display: flex;
+    align-items: center;
+    justify-content: space-between; 
+    height: 60px;
+    padding-left: 30px;
+    background-color: rgb(190, 159, 18);
+}
+
+.CXpesquisa{
+    padding-right: 30px;
+}
+
+.icone{
+    width: 150px;
+    height: 150px;
+    box-shadow: 5px 15px 5px rgb(177, 143, 33);
+    border: 1px black solid;
+}
+
+main{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    text-align: center;
+    padding-top: 50px;
+}
+
+.videos{
+    padding: 20px;
+}
+
+.videos p{
+    padding-top: 15px;
+    font-weight: bolder;
+    font-size: larger;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+footer{
+    height: 80px;
+    background-color: lightgrey;
+    position:absolute;
+    bottom: 0px;
+}
+
+.videocofig{
+    display: block;
+    align-items: center;
+}
+
+.videocofig video{
+    width: 800px;
+    height: 500px;
+}
