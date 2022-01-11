@@ -78,7 +78,7 @@ calculo()  */
 
 // outra maneira
 
-function somaNumeros(numero1, numero2){
+ function somaNumeros(numero1, numero2){
 	const soma = numero1 + numero2
 	
 	return soma
@@ -101,3 +101,4 @@ num1 = Number(prompt("digite 1"))
 num2 = Number(prompt("digite 2"))
 resultado = somaNumeros(num1,num2)
 console.log(resultado)
+ 
