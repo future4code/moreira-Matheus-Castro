@@ -1,5 +1,31 @@
 import React from 'react';
 import axios from 'axios';
+import styled from 'styled-components';
+
+const Button = styled.button`
+  border-radius: 5px;
+  background-color: white;
+  width: 100px;
+  margin-top: 10px;
+
+  :hover{
+    cursor: pointer;
+  }
+`
+
+const Main = styled.main`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+`
+
+const Input = styled.input`
+  width: 300px;
+  padding: 1px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+`
 
 const urlUsers = "https://us-central1-labenu-apis.cloudfunctions.net/labenusers/users"
 
@@ -45,22 +71,22 @@ export default class PagCadastro extends React.Component {
   }
   render() {
     return (
-      <div>
+      <Main>
         
-        <input
+        <Input
         value={this.state.inputNome}
         onChange={this.onChangeUsers}
         placeholder='Nome'>
-        </input>
-        <input
+        </Input>
+        <Input
         value={this.state.inputEmail}
         onChange={this.onChangeEmail}
         placeholder='Email'>
-        </input>
-        <button onClick={this.createUsers}>Criar Usuário</button>
+        </Input>
+        <Button onClick={this.createUsers}>Criar Usuário</Button>
          
         
-        </div>
+        </Main>
     )
   }
 }
