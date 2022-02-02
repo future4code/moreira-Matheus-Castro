@@ -78,7 +78,7 @@
 
 .bolos{
     display: grid;
-    grid-template-columns: repeat(5, 2fr);
+    grid-template-columns: repeat(4);
 
     padding-left: 30px; 
     gap: 10%;
