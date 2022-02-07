@@ -192,7 +192,7 @@ export default class Playlist extends React.Component {
             .then((res) => {
                 alert(`A música ${this.state.inputNome} foi adicionada com sucesso`)
                 this.setState({ listaMusic: [] })
-                this.listaDeMusicas(this.state.playlistSelecionada)
+                /* this.listaDeMusicas(this.state.playlistSelecionada) */
                 this.setState({ inputNome: "" })
                 this.setState({ inputArtista: "" })
                 this.setState({ inputUrl: "" })
