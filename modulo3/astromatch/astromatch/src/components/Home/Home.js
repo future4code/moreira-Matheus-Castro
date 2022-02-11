@@ -30,10 +30,11 @@ const Borda = styled.div`
 `
 
 const DivBotoes = styled.div`
-    bottom: 470px;
     display: flex;
     justify-content: space-between;
-    width: 180px
+    width: 220px;
+    flex-direction: row-reverse
+
 `
 
 const Like = styled.button`
@@ -43,6 +44,7 @@ const Like = styled.button`
     background-color: #ccf3bd;
     color: green;
     font-size: 35px;
+    border: green 1px solid;
 
     :hover {
         transform: scale(1.1);
@@ -52,17 +54,62 @@ const Like = styled.button`
 `
 
 const Deslike = styled.button`
-border-radius: 50%;
+    border-radius: 50%;
     width: 50px;
     height: 50px;
     background-color: 	#f3bdbd;
     color: red;
     font-size: 35px;
+    border: 1px solid red;
 
     :hover {
         transform: scale(1.1);
         transition: all 0.5s ease 0s;
     }
+`
+
+const ContainerBotao = styled.div`
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 40px;
+    width: 400px;
+`
+
+const ButtonMatch = styled.button`
+    border-radius: 5px;
+    border: 1px solid green;
+    font-size: 15   px;
+    background-color:  #ccf3bd;
+    font-weight: bold;
+
+    :hover {
+        transform: scale(1.1);
+        transition: all 0.5s ease 0s;
+    }
+`
+
+const ButtonReset = styled.button`
+    border-radius: 5px;
+    border: 1px solid red;
+    font-size: 15px;
+    background-color: #f3bdbd;
+    font-weight: bold;
+
+    :hover {
+        transform: scale(1.1);
+        transition: all 0.5s ease 0s;
+    }
+`
+const P1 = styled.span`
+  color: mediumseagreen;
+  font-size: 18px;
+  font-weight: bold;
+`
+
+const P2 = styled.span`
+  color: darkorchid;
+  font-size: 18px;
+  font-weight: bold;
 `
 
 const IMG = styled.img`
@@ -81,8 +128,6 @@ const headers = {
         'Content-Type': "application/json"
     }
 }
-
-
 
 
 const Home = (props) => {
@@ -131,8 +176,13 @@ const Home = (props) => {
 
 
             <Borda>
-            <button onClick={props.vizualizarMatch}>Match</button>
-            <button onClick={ props.clear}> resete </button>
+            <ContainerBotao>
+            <ButtonReset onClick={ props.clear}> Reset  💔 </ButtonReset>
+            <div>
+            <P1>Astro</P1><P2>Match</P2>
+            </div>
+            <ButtonMatch onClick={props.vizualizarMatch}>Matchs 💘</ButtonMatch>
+            </ContainerBotao>
                 <IMG src={user.photo} />
                 <Desc>
                     <h3>{user.name}, {user.age}</h3>
