@@ -6,9 +6,21 @@ import HomePage from './pages/HomePage'
 import ListTripsPage from './pages/ListTripsPage'
 import LoginPage from './pages/LoginPage'
 import TripDetailsPage from './pages/TripDetailsPage'
-import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom'
 
 export default function App() {
+
+  const protectToken = () => {
+
+    const token = localStorage.getItem('token')
+
+    if(token === null) {
+      alert("Você deve estar logado para continuar")
+      Navigate('/')
+
+    }
+  }
+
   return (
 
     <BrowserRouter>

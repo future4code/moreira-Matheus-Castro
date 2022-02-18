@@ -1,10 +1,63 @@
-import React from 'react'
+import axios from 'axios'
+import React, { useState } from 'react'
+import { useNavigate } from 'react-router-dom'
+import { url } from '../constants/urls'
+import useForm from '../hook/useForm'
+
+
 
 export default function LoginPage() {
+
+  const {form, onChangeForm} = useForm({email:'', password: ''})
+
+  const sendLogin = (event) => {
+
+    event.preventDefault()
+
+    axios
+      .post(`${url}/login`, form)
+      .then((res) => {
+        console.log(res.data)
+        localStorage.setItem('token', res.data.token)
+        navigate('/admin')
+      })
+      .catch((err) => {
+        console.log('deu erro', err.response)
+      })
+  }
+
+  const navigate = useNavigate()
+
+  const backPage = () => {
+    navigate(-1)
+  }
+
+
   return (
     <div>LoginPage
-      <button> Voltar</button>
+      <form onSubmit={sendLogin}>
+      <input
+        name='email'
+        placeholder='email'
+        required
+        type='email'
+        value={form.email}
+        onChange={onChangeForm}>
+      </input>
+      <input
+        name='password'
+        placeholder='senha'
+        required
+        pattern={"^.{6,}"}
+        title={"A senha deve ter no mínimo 6 digitos"}
+        type='password'
+        value={form.password}
+        onChange={onChangeForm}>
+      </input>
+      
       <button> Entrar </button>
-    </div>
+    </form>
+    <button onClick={backPage}> Voltar</button>
+    </div >
   )
 }
