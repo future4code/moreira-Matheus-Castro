@@ -4,6 +4,7 @@ import styled from 'styled-components'
 import { countries } from '../constants/contries'
 import { url } from '../constants/urls'
 import axios from 'axios'
+import useForm from '../hook/useForm'
 
 const DivButton = styled.div`
   width: 250px;
@@ -67,15 +68,19 @@ const Option = styled.option`
   color: lightgray;
 `
 
- const ApplicationFormPage = () => {
+const ApplicationFormPage = () => {
 
+
+  const [idTrip, setTripId] = useState("");
   const [trips, setTrips] = useState([])
 
-  const [travel, setTravel] = useState ('')
-  console.log(travel)
-
-  const [contrie, setContrie] = useState('')
-  console.log(contrie)
+  const { form, onChangeForm, cleanFields } = useForm({
+    name: '',
+    age: '',
+    applicationText: '',
+    profession: '',
+    country: ''
+  })
 
   const navigate = useNavigate()
 
@@ -83,65 +88,115 @@ const Option = styled.option`
     navigate(-1)
   }
 
-  const onChangeTravel = (event) => {
-    setTravel(event.target.value)
+  const sendApplication = (event) => {
+
+    event.preventDefault()
+    console.log(`${url}/trips/${idTrip}/apply`)
+    axios.post(`${url}/trips/${idTrip}/apply`, form)
+    .then((res) => {
+        alert("Incrição enviada com sucesso! ")
+        cleanFields()
+    })
+    .catch((err) => {
+      alert("Erro ao enviar sua inscrição, tente novamente !")
+    })
   }
 
-  const onChangeContrie = (event) => {
-    setContrie(event.target.value)
+
+  const onChangeTripId = (event) => {
+    setTripId(event.target.value)
+    console.log(event.target.value)
   }
+
+  
 
   const getTrips = () => {
     axios
-    .get(`${url}/trips`)
-    .then((res) => {
-      /* console.log(res.data.trips) */
-      setTrips(res.data.trips)
-    })
-    .catch((err) => {
-      console.log(err)
-    })
+      .get(`${url}/trips`)
+      .then((res) => {
+        setTrips(res.data.trips)
+      })
+      .catch((err) => {
+        console.log(err)
+      })
   }
 
   useEffect(() => {
-
-getTrips()
-
-}, [])
+    getTrips()
+  }, [])
 
   return (
     <Main>
       <h1>Inscreva-se para uma viagem</h1>
-      <DivInput>
-      <Select 
-      defaultValue={""}
-      required
-      onChange={onChangeTravel}
-      value={travel}
-      placeholder='Escolha uma Viagem'>
-       <Option> Escolha uma Viagem </Option>
-       {trips.map((trip) => {
-                        return <option key={trip.id}>{trip.name}</option>
-                    })}
-      </Select>
-      <Input placeholder='Nome'></Input>
-      <Input placeholder='Idade'></Input>
-      <Input placeholder='Texto de Candidatura'></Input>
-      <Input placeholder='Profissão'></Input>
-      <Select
-      defaultValue={""}
-      required
-      onChange={onChangeContrie}
-      value={contrie}>
-      <Option>  Escolha um País </Option>
-      {countries.map((country) => {
-                        return <option key={country}>{country}</option>
-                    })}
-      </Select>
-      </DivInput>
+      <form onSubmit={sendApplication}>
+        <DivInput>
+          <Select
+            placeholder={"Escolha uma Viagem"}
+            name={"travel"}
+            defaultValue={""}
+            onChange={onChangeTripId}
+            required>
+            <option value={""} disabled>Escolha uma viagem</option>
+            {trips.map((trip) => {
+              return <option value={trip.id} key={trip.id}>{trip.name}</option>
+            })}
+          </Select>
+
+          <Input
+            placeholder='Nome'
+            name='name'
+            required
+            type='text'
+            value={form.name}
+            onChange={onChangeForm}
+            pattern={"^.{3,}$"}
+            title={"O nome deve ter no mínimo 3 caracteres"}/>
+
+          <Input placeholder='Idade'
+            name='age'
+            required
+            type='number'
+            min={18}
+            value={form.age}
+            onChange={onChangeForm} />
+
+          <Input placeholder='Texto de Candidatura'
+            name='applicationText'
+            required
+            type='text'
+            pattern={"^.{30,}$"}
+            value={form.applicationText}
+            title={"O texto deve ter no mínimo 30 caracteres"}
+            onChange={onChangeForm} />
+
+          <Input placeholder='Profissão'
+            name='profession'
+            required
+            type='text'
+            pattern={"^.{5,}$"}
+            value={form.profession}
+            title={"Deve ter no mínimo 5 caracteres"}
+            onChange={onChangeForm} />
+
+          <Select
+            placeholder={"Escolha um País"}
+            name={"country"}
+            defaultValue={""}
+            onChange={onChangeForm}
+            required>
+            <option value={""} disabled>Escolha um País</option>
+            {countries.map((country) => {
+              return <option key={country}>{country}</option>
+            })}
+          </Select>
+
+        </DivInput>
+        <Button type={"submit"}> Enviar </Button>
+        <Button onClick={backPage}> Voltar</Button>
+      </form>
       <DivButton>
-      <Button onClick={backPage}> Voltar</Button>
-      <Button> Enviar </Button>
+        
+        
       </DivButton>
     </Main>
   )

@@ -70,7 +70,8 @@ export default function CreateTripPage() {
 
   const navigate = useNavigate()
 
-  const backPage = () => {
+  const backPage = (event) => {
+    event.preventDefault()
     navigate(-1)
   }
 
@@ -134,10 +135,11 @@ export default function CreateTripPage() {
           min={30}>
         </input>
 
-        <Button> Criar </Button>
+        <Button type={'submit'}> Criar </Button>
+        <Button onClick={backPage}> Voltar</Button>
       </form>
       <DivButton>
-        <Button onClick={backPage}> Voltar</Button>
+        
 
       </DivButton>
     </Main>

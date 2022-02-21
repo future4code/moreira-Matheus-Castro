@@ -45,11 +45,11 @@ const DivBox = styled.button`
 `
 
 export default function AdminHomePage(props) {
+  
 
   ProtectToken()
 
   const [trips, setTrips] = useState([])
-  const [tripsId, setTripsId] = useState('')
   const [deleteItem, setDeleteItem] = useState(0)
 
     
@@ -95,11 +95,11 @@ export default function AdminHomePage(props) {
       }
     })
     .then((res) => {
-      console.log(res.data.trip.id)
+      localStorage.setItem('id', res.data.trip.id)
+      navigate('/detailstrips')
     })
-    useNavigate('/detailstrips')
     .catch((err) => {
-      console.log(err.response)
+      console.log(err)
     })
   }
 
@@ -107,7 +107,7 @@ export default function AdminHomePage(props) {
 
     getTrips()
   
-  }, [deleteItem])
+  }, [DeleteTrip])
 
   const navigate = useNavigate()
 

@@ -55,9 +55,11 @@ export default function LoginPage() {
         onChange={onChangeForm}>
       </input>
       
-      <button> Entrar </button>
+      <button type={'submit'}> Entrar </button>
+      
     </form>
     <button onClick={backPage}> Voltar</button>
+    
     </div >
   )
 }
