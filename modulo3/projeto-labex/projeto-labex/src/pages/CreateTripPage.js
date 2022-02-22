@@ -57,7 +57,8 @@ export default function CreateTripPage() {
         }
       })
       .then((res) => {
-        alert('deu certo')
+        alert('Viagem Criada !')
+        cleanFields()
       })
       .catch((err) => {
         console.log(err.response)
