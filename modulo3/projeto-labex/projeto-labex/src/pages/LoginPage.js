@@ -28,8 +28,9 @@ export default function LoginPage() {
 
   const navigate = useNavigate()
 
-  const backPage = () => {
-    navigate(-1)
+  const backPage = (event) => {
+    event.preventDefault()
+    navigate('/')
   }
 
 
@@ -56,9 +57,10 @@ export default function LoginPage() {
       </input>
       
       <button type={'submit'}> Entrar </button>
+      <button onClick={backPage}> Voltar</button>
       
     </form>
-    <button onClick={backPage}> Voltar</button>
+    
     
     </div >
   )

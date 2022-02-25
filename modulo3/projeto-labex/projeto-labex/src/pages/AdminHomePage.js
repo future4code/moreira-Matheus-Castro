@@ -47,8 +47,6 @@ const DivBox = styled.button`
 export default function AdminHomePage(props) {
   
 
-  ProtectToken()
-
   const [trips, setTrips] = useState([])
   const [deleteItem, setDeleteItem] = useState(0)
 
