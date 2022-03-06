@@ -13,7 +13,7 @@ const ProtectToken = () => {
 
         if (token === null) {
             alert("Você deve estar logado para continuar")
-            Navigate('/login')
+            Navigate('/')
 
         }
     }

@@ -7,7 +7,7 @@ import { url } from '../constants/url'
 
 const Main = styled.div`
   width: 100vw;
-  height: 100vh;
+  height: 90vh;
   background-color: #a7a5b5;
 `
 
@@ -142,6 +142,7 @@ const Login = () => {
         alert("Incorrect email or password")
       })
   }
+  
   return (
     <Main>
       <Container>

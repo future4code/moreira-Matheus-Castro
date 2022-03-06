@@ -166,6 +166,8 @@ export default function Signup() {
           <Input
             name='password'
             placeholder='Password'
+            pattern={"^.{6,}"}
+            title={"A senha deve ter no mínimo 6 digitos"}
             required
             type='password'
             value={form.password}
