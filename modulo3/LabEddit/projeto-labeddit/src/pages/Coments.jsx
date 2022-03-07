@@ -149,6 +149,7 @@ const Div = styled.div`
   display: flex ;
   flex-direction: column ;
   justify-content: center ;
+  word-break: break-word;
   `
 
 const Coments = () => {

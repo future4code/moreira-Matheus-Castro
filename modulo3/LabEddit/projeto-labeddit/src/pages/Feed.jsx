@@ -10,8 +10,8 @@ import deslike from '../img/deslike.png'
 import desliked from '../img/desliked.png'
 import comment from '../img/comentarios.png'
 import useForm from '../hooks/useForm'
-import carregando from '../img/carregando.gif'
-
+import loading from '../img/loading.gif'
+import moment from 'moment'
 
 const Div = styled.div`
   box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
@@ -20,6 +20,7 @@ const Div = styled.div`
   margin: 30px;
   border-radius: 20px;
   background-color: #252046;
+  word-break: break-word;
   `
 
 
@@ -98,7 +99,10 @@ const ButtonCancel = styled.button`
 
 const DivTittle = styled.div`
 text-align: center ;
-margin-top: -3vh ;
+margin-top: -2vh ;
+width: 250px;
+margin-left: auto ;
+margin-right: auto ;
 `
 
 const DivUser = styled.div`
@@ -166,24 +170,13 @@ const PUser = styled.p`
 const PDate = styled.p`
   color: lightblue;
   margin: 5px 0px 0px 15px;
-  padding: 5px ;
+  padding: 10px ;
 `
 
 const Span = styled.span`
   font-weight: bold ;
   color: white;
 `
-
-
-const converterData = (date) => {
-  const day = date.substring(8, 10);
-  const month = date.substring(5, 7);
-  const year = date.substring(2, 4);
-  const hour = date.substring(11, 13)
-  const min = date.substring(14, 16)
-  return `${day}/${month}/${year} ${hour}:${min}`;
-};
-
 
 export default function Feed() {
 
@@ -366,10 +359,10 @@ export default function Feed() {
             <DivCancel>
               <ButtonCancel style={userVote === null ? { color: 'white' } : { color: '#00a8f3' }} onClick={() => DeletePostVote(id)}> Reset my Likes </ButtonCancel>
             </DivCancel>
-            <PDate>{converterData(createdAt)}</PDate>
+            <PDate>{moment(createdAt).fromNow()}</PDate>
           </Div>
         )
-      }) : <p>carregando </p>}
+      }) : <img src={loading} />}
 
 
     </Main>
