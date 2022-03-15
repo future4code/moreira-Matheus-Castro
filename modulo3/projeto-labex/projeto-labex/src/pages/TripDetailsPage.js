@@ -54,6 +54,7 @@ const TripDetailsPage = () => {
       })
       .then((res) => {
         alert("Candidato Aprovado")
+        getDetailsTrips()
       })
       .catch((err) => {
         console.log(err.response)
@@ -80,24 +81,21 @@ const TripDetailsPage = () => {
       })
       .then((res) => {
         alert("Candidato Reprovado")
+        getDetailsTrips()
       })
       .catch((err) => {
         console.log(err.response)
       })
   }
 
- 
-
-
    const candidate = detailsTrip?.candidates?.map((candidate) => {
-    console.log('candidate', candidate) 
     return <div key={candidate.id}>
    <p>Nome: {candidate.name}</p>
    <p>Descrição: {candidate.applicationText}</p>
    <p>Profissão: {candidate.profession}</p>
    <p>Idade: {candidate.age} anos</p>
    <p>País: {candidate.country}</p>
-   <button id={candidate.id, true} onClick={approveCandidate}>Aprovar</button>
+   <button id={candidate.id} onClick={approveCandidate}>Aprovar</button>
    <button id={candidate.id} onClick={dispproveCandidate}>Negar</button>
      </div>
    })
@@ -105,9 +103,9 @@ const TripDetailsPage = () => {
     
 
   useEffect(() => {
-
+  
     getDetailsTrips()
-
+    
   }, [])
 
   const backPage = () => {
@@ -126,8 +124,8 @@ const TripDetailsPage = () => {
       </div>
       <button onClick={backPage}>Voltar</button>
       
-      {/* {detailsTrip.candidates.length > 0 ? candidate : <p>Não há candidatos para essa viagem !</p>} */}
-      {candidate}
+      {detailsTrip?.candidates?.length > 0 ? candidate : <p>Não há candidatos para essa viagem !</p>}
+      
     </div>
   )
 }
