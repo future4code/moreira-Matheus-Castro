@@ -6,7 +6,6 @@ import useForm from '../hook/useForm'
 import axios from 'axios'
 import { url } from '../constants/urls'
 import { planets } from '../constants/planets'
-import { useParams } from 'react-router-dom'
 
 const DivButton = styled.div`
   width: 400px;

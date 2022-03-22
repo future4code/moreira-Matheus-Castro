@@ -10,17 +10,6 @@ import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom'
 
 export default function App() {
 
-  const protectToken = () => {
-
-    const token = localStorage.getItem('token')
-
-    if(token === null) {
-      alert("Você deve estar logado para continuar")
-      Navigate('/')
-
-    }
-  }
-
   return (
 
     <BrowserRouter>
@@ -28,9 +17,9 @@ export default function App() {
 
         <Route path='/' element={<HomePage />} /> 
         <Route path='/trips' element={<ListTripsPage />} />
-        <Route path='/form' element={<ApplicationFormPage />} />
+        <Route path='/form/:id' element={<ApplicationFormPage />} />
         <Route path='/login' element={<LoginPage />} />
-        <Route exact path='/admin' element={<AdminHomePage />} />
+        <Route path='/admin' element={<AdminHomePage />} />
         <Route path='/detailstrips' element={<TripDetailsPage />} />
         <Route path='/createtrips' element={<CreateTripPage />} />
         

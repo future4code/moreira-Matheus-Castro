@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { useNavigate } from 'react-router-dom'
+import { useNavigate, useParams } from 'react-router-dom'
 import styled from 'styled-components'
 import { countries } from '../constants/contries'
 import { url } from '../constants/urls'
@@ -64,12 +64,10 @@ const Main = styled.div`
   flex-direction: column;
 `
 
-const Option = styled.option`
-  color: lightgray;
-`
-
 const ApplicationFormPage = () => {
 
+    const params = useParams()
+    const tripId = params.id
 
   const [idTrip, setTripId] = useState("");
   const [trips, setTrips] = useState([])
@@ -90,9 +88,9 @@ const ApplicationFormPage = () => {
 
   const sendApplication = (event) => {
 
+
     event.preventDefault()
-    console.log(`${url}/trips/${idTrip}/apply`)
-    axios.post(`${url}/trips/${idTrip}/apply`, form)
+    axios.post(`${url}/trips/${tripId}/apply`, form)
     .then((res) => {
         alert("Incrição enviada com sucesso! ")
         cleanFields()
