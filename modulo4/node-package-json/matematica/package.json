@@ -1,0 +1,14 @@
+{
+  "name": "matematica",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "node matematica.js"
+  },
+  "author": "matheus",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.26.1"
+  },
+  "description": ""
+}
