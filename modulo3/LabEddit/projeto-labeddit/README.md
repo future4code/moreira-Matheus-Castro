@@ -1,70 +1,57 @@
-# Getting Started with Create React App
+<h2 align="center">
+      LabEddit
+</h2>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Individual project
 
-## Available Scripts
+## Link Surge
+[Link](http://questionable-children.surge.sh/)
 
-In the project directory, you can run:
+## Functionalities
 
-### `npm start`
+- [x] `Login` → User must enter an email and password to login. 
+- [x] `Signup` → User can sign up, just provide a username, email and password.
+- [x] `Feed` → It is possible to see the most recent posts made in the API.
+- [X] `Create Post` → It is possible to create your own post.
+- [X] `Comments` → When clicking on the comment icon, the user goes to a page with all the comments on that same post, and can also make his own comment. 
+- [X] `Votes` → User is able to vote on each post and also on each comment.
+- [ ] `Responsive`→ Is not responsive for mobile.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Website
+### Login
+![login](https://user-images.githubusercontent.com/94663972/159375446-63e9dd5f-9e1d-46fd-a25d-bcbb121804de.png)
+### SignUp
+![SignUp](https://user-images.githubusercontent.com/94663972/159375449-9a93ec7b-a201-4ae7-bf58-315abb5cca22.png)
+### Feed
+![feed](https://user-images.githubusercontent.com/94663972/159375441-f1050bc3-5a24-4d0a-a7c5-012fdce94339.png)
+### Comments
+![commments](https://user-images.githubusercontent.com/94663972/159375445-5cf650a3-33b9-43d7-bf5b-79ccc9257eb2.png)
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
 
-### `npm test`
+## List with language, framework and/or technologies used
+<ul>
+	<li>HTML, CSS AND JAVASCRIPT</li>
+	<li>React</li>
+	<li>Route System</li>
+	<li>Styled-Components</li>
+</ul>
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## IDE
 
-### `npm run build`
+Visual Studio Code
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## How to use the project with NPM
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## 1 - Clone the repository
+	- git clone https://github.com/matheuscastro77/LabEddit
+## 2 - Install the dependencies and start the project
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## 2.1 - Dependencies to be installed:
+       - npm install
+       - npm install styled-components
+       - npm install axios
+       - npm install react-router-dom
+      
+## 3 - Starting the project
+	- npm start
+      
