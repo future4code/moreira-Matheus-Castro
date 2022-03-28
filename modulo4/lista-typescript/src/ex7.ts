@@ -3,13 +3,13 @@ const ajustaPreco = (preco :number): string => {
 	return "R$ "+valorAjustado
 }
 
-type Produto = {
+type Product = {
     nome: string,
     quantidade: number, 
     valorUnitario: number | string 
 }[]
 
-const produtos :Produto = [
+const produtos :Product = [
 	{ nome: "MacMugffin", quantidade: 37, valorUnitario: 51.040},
 	{ nome: "Vassoura voadora", quantidade: 56, valorUnitario: 210.0},
 	{ nome: "Laço da verdade", quantidade: 32, valorUnitario: 571.5},
@@ -19,7 +19,7 @@ const produtos :Produto = [
 	{ nome: "Pokebola", quantidade: 200, valorUnitario: 99.9915}
 ]
 
-function ordenar(array: Produto) :Produto {
+function ordem(array: Product) :Product {
     const preçoAjustado = array.map((p) => {
         p. valorUnitario = ajustaPreco(p.valorUnitario as number)
         return p
@@ -32,4 +32,4 @@ function ordenar(array: Produto) :Produto {
     return ordenado
 }
 
-console.log(ordenar(produtos))
+console.log(ordem(produtos))
