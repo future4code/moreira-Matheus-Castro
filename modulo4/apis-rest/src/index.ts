@@ -1,5 +1,5 @@
 import express from "express"
-import { users } from "./users";
+import { users, Users } from "./users";
 
 const app = express();
 
@@ -33,64 +33,85 @@ app.get("/users", (req, res) => {
         }
 
         res.status(200).send(list)
-    } catch(error) {
-        res.status(codeError).send({message: error})
+    } catch(error: any) {
+        res.status(codeError).send({message: error.message})
     }
 
 })
 
-app.get("/user/:type", (req, res) => {
+
+app.get("/user", (req, res) => {
     let codeError: number = 400
     try {
-        const type:string = req.params.type
+        const name:string = req.query.name as string
+        const user = users.find((user) => {
+            return user.name.toLowerCase() === name.toLowerCase()
+        })
 
-        if(type.length === 0){
+        if(!user){
             codeError = 404
-            throw new Error ("Nenhum usuário encontrado")
+            throw new Error ("Nenhum usuário encontrado, confira se o valor passado é uma string e se é válido.")
         }
 
+        res.status(200).send(user)
+
+    } catch(error: any) {
+        res.status(codeError).send({message: error.message})
+    }
+})
+
+
+app.get("/users/:type", (req, res) => {
+    let codeError: number = 400
+    try {
+        const type: string = req.params.type.toLowerCase() as string
+
+        console.log(req.params)
+
         const filterType = users.filter((user) => {
-            return user.type === type
+            return user.type.toLowerCase() === type
         })
 
         const typerFiltrado = filterType.map((user) => {
             return user
         })
 
-        if(typeof type !== "string"){
-            codeError = 422
-            throw new Error ("O valor para o type tem que ser uma string válida")
+        if (typerFiltrado.length === 0){
+            codeError = 404
+            throw new Error ("Nenhum usuário encontrado, confira se o valor passado é uma string e se é válido.")
         }
 
         res.status(200).send(typerFiltrado)
 
-    } catch(error) {
-        res.status(codeError).send({message: error})
+    } catch(error: any) {
+        res.status(codeError).send({message: error.message})
     }
 })
 
-app.get("/users", (req, res) => {
+app.post("/users/add", (req, res) => {
     let codeError: number = 400
     try {
-        const name:string = req.query.name as string
-        const user = users.find((user) => {
-            user.name === name
-            return user
-        })
+        const {id, name, email, type, age} = req.body
 
-        if(!user){
-            codeError = 404
-            throw new Error ("Nenhum usuário encontrado")
-        }
-
-        if(typeof name !== "string"){
+        if(!id || !name || !email || !type || !age) {
             codeError = 422
-            throw new Error ("O valor para o type tem que ser uma string válida")
+            throw new Error("Por favor, verifique se você passou todos os valores no body")
+        }
+        
+        const newUser: Users = {
+            id,
+            name,
+            email,
+            type,
+            age
         }
 
-        res.status(200).send(user)
+        users.push(newUser)
 
-    } catch(error) {
-        res.status(codeError).send({message: error})
+        res.status(201).send({message:"Usuário criado com sucesso"})
+
+    } catch(error: any) {
+        res.status(codeError).send({message: error.message})
     }
+
 })

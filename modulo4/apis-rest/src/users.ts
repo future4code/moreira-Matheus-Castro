@@ -1,12 +1,12 @@
-type Users = {
+export type Users = {
     id: number
     name: string
     email: string
     type: string
     age: number
-}[]
+}
 
-export const users: Users = [
+export const users: Users[] = [
     {
         id: 1,
         name: "Alice",
