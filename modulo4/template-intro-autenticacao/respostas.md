@@ -19,4 +19,4 @@ CREATE TABLE User (
 
 # 3 -
 ## A
-<p> A linha garante que o valor a ser passado será uma string </p>
+<p> A linha garante que o valor a ser passado será uma string. </p>
