@@ -1,0 +1,25 @@
+POST http://localhost:3003/user/signup
+Content-Type: application/json
+
+{
+    "name": "matheus",
+    "email": "matheus@gmail.com",
+    "password": "1234567"
+}
+
+###
+
+GET http://localhost:3003/user/login
+Content-Type: application/json
+
+{
+    "email": "matheus@gmail.com",
+    "password": "1234567"
+}
+
+
+###
+
+GET http://localhost:3003/user/token
+Content-Type: application/json
+authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImJiYjM3MDQ4LWJiNjctNDc0My04YWU2LTViMzNiZjlhZThkZiIsImlhdCI6MTY1MTI2NDQ0OSwiZXhwIjoxNjUxMzA3NjQ5fQ.520UuM-H5Vk3HwDYlQcfJ2gZBNcX-JyN1Z6LEuc51Gg
