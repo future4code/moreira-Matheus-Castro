@@ -1,0 +1,2 @@
+# Aprendizados Da Semana
+Nessa seamana eu aprendi os comandos básicos a serem usados no Git (criar, mover, modificar e entrar em pastar e arquivos, de texto ou não) e também um pouco sobre o GitHub. Não sou muito bom em dizer o que aprendi, mas fui bem, muito melhor do que imaginei, quase não usei as dicas, pra falar a verdade, apenas pro código **touch** que eu nao gravava por nada haha.

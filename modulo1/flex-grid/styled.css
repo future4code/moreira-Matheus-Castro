@@ -1,0 +1,110 @@
+*{
+    padding: 0px;
+    margin: 0px;
+}
+
+.header{
+    height: 60px;
+    background-color: mediumvioletred;
+    
+}
+
+.imgBolinho{
+    width: 30px;
+    height: 30px;
+    padding: 10px 60px
+}
+
+.Div{
+    display: flex;
+    justify-content: space-between;
+    margin-top: -45px;
+    padding: 0px 100px 100px 120px
+}
+
+.menu img{
+    width: 30px;
+    height: 30px;
+    padding-right: 20px;
+}
+
+.botaoSimbolo{
+    display: flex;
+    height: 20px;
+    padding: 20px;
+}
+
+.seta{
+    padding-top: 20px;
+}
+
+.menu button{
+    height: 30px;
+    font-size: 20px;
+    font-weight: bold;
+    background-color: #f2d0e0;
+    border: 0px;
+}
+
+.menu div{
+    display: flex;
+}
+
+.menu{
+    background-color: #f2d0e0;
+    width: 300px;
+    height: 820px;
+}
+
+.home{
+    display: flex;
+    justify-content: space-between;
+}
+
+.bolos, img{
+    width: 230px;
+    height: 230px;
+    padding: 25px;
+}
+
+.organizarBolos, h2, h3{
+    text-align: center;
+}
+
+.organizarBolos{
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
+}
+
+
+.bolos{
+    display: grid;
+    grid-template-columns: repeat(4);
+
+    padding-left: 30px; 
+    gap: 10%;
+}
+
+.main{
+    display: grid;
+    grid-template-columns: 1fr 5fr;
+    justify-items: start;
+}
+
+body{
+    overflow: hidden;
+}
+
+.footer{
+    
+    height: 60px;
+    background-color: mediumvioletred;
+    width: 100%;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.footer, p{
+    margin-top: 0px;
+    font-size: 20px;
+
+}

@@ -1,0 +1,14 @@
+{
+  "name": "aula-node",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {  
+    "start": "node tarefa.js"
+  },
+  "author": "matheus",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.26.1"
+  },
+  "description": ""
+}
