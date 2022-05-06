@@ -1,0 +1,18 @@
+POST http://localhost:3003/user/signup
+Content-Type: application/json
+
+{
+    "name": "vitor",
+    "email": "vitor@gmail.com",
+    "password": "12345678"
+}
+
+###
+
+GET http://localhost:3003/user
+Content-Type: application/json
+
+{
+    "email": "matheus@gmail.com",
+    "password": "12345678"
+}
