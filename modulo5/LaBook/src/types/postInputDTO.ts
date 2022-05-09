@@ -1,6 +1,6 @@
 import { USER_ROLES } from "./typeEnum"
 
-export type PostInputDTO={
+export type PostInputDTO = {
     photo:string,
     description:string,
     type:USER_ROLES

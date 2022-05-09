@@ -21,10 +21,16 @@ Content-Type: application/json
 
 POST http://localhost:3003/user/post
 Content-Type: application/json
-authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImEyMjc1MmIyLTIwMDEtNDkxYi04NmJkLThlODk2ZDYwZmNiNyIsImlhdCI6MTY1MjExMDcyMCwiZXhwIjoxNjUyMTEyMTYwfQ.t06_t92G6If3KM4dnURw6c-Vkc9qAn5V6D1TTOxDBE8
+authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImEyMjc1MmIyLTIwMDEtNDkxYi04NmJkLThlODk2ZDYwZmNiNyIsImlhdCI6MTY1MjEyNDM0MywiZXhwIjoxNjUyMTI1NzgzfQ.ulSwmdz0mZtn7zDZonlDSQGg49ab9t0BKVp7V_JTOuQ
 
 {
-   "photo": "matheus", 
-   "description": "teste",
+   "photo": "matheus2", 
+   "description": "teste2",
    "type": "NORMAL"   
 }
+
+
+###
+
+GET http://localhost:3003/user/post/ab2ac5f1-a59f-4f45-a54e-351240ca69a5
+Content-Type: application/json

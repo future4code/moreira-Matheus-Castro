@@ -12,7 +12,7 @@ export default class PostBusiness {
     private authenticator: Authenticator
   ) { }
 
-  createPost = async (token: string, input: PostInputDTO) => {
+  createPost = async (input: PostInputDTO, token: string ) => {
     const { photo, description, type } = input;
 
     if (!photo || !description || !type) {
@@ -23,7 +23,7 @@ export default class PostBusiness {
     if (!tokenData) {
       throw new Error("Token inválido")
     }
-
+    
     const id = this.idGenerator.generateId()
 
     const created_at = new Date()
@@ -37,9 +37,11 @@ export default class PostBusiness {
       type,
       created_at,
       author_id
-    )
+    )      
     
     await this.postData.insert(post)
+
+    return tokenData
 
   }
 

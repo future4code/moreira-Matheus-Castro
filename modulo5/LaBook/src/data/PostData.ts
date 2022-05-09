@@ -1,5 +1,4 @@
 import Post from "../model/Post";
-import { FindByIdResponse } from "../types/findById";
 import { BaseDatabase } from "./BaseDatabase";
 
 
@@ -8,6 +7,7 @@ export default class PostData extends BaseDatabase {
 
     insert = async (post: Post) => {
         try {
+            console.log(post)
             await this.connection
                 .into(this.TABLE_NAME)
                 .insert(post)
@@ -22,7 +22,7 @@ export default class PostData extends BaseDatabase {
 
     findById = async (id: string): Promise<Post> => {
         try {
-            const result: FindByIdResponse = await this.connection
+            const result = await this.connection
                 .select("*")
                 .from(this.TABLE_NAME)
                 .where({ id: id })

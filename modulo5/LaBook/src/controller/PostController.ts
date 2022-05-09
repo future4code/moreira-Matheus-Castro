@@ -21,7 +21,7 @@ export default class PostController {
         }
 
         try {
-            await this.postBusiness.createPost(token, input);
+            await this.postBusiness.createPost(input, token);
 
             res.status(200).send("Sucess!");
         } catch (error) {
