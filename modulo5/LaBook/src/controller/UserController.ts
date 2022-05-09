@@ -1,7 +1,7 @@
 import { Request, Response } from "express";
 import UserBunisses from "../business/UserBusiness";
 import { LoginInputDTO } from "../types/loginInputDTO";
-import { SignupInputDTO } from "../types/signupInputDto";
+import { SignupInputDTO } from "../types/signupInputDTO";
 
 export default class UserController {
 
@@ -20,6 +20,7 @@ export default class UserController {
 
         try {
             const token = await this.userBusiness.signup(input)
+            
             res.status(201).send({ message: "Sucess!", token })
         } catch (error) {
             if (error instanceof Error) {

@@ -5,7 +5,7 @@ import { Authenticator } from "../services/Authenticator";
 import { HashManager } from "../services/HashManager";
 import { IdGenerator } from "../services/IdGenerator";
 import { LoginInputDTO } from "../types/loginInputDTO";
-import { SignupInputDTO } from "../types/signupInputDto";
+import { SignupInputDTO } from "../types/signupInputDTO";
 
 export default class UserBunisses {
 
@@ -18,7 +18,7 @@ export default class UserBunisses {
 
     signup = async (input: SignupInputDTO) => {
         const { name, email, password } = input
-        if (!name || !email ||  !password) {
+        if (!name || !email || !password) {
             throw new Error("Preencha todos os campos")
         }
 
@@ -47,7 +47,7 @@ export default class UserBunisses {
     }
 
     login = async (input: LoginInputDTO) => {
-        const {email, password } = input
+        const { email, password } = input
 
         if (!email || !password) {
             throw new Error("Preencha todos os campos")
