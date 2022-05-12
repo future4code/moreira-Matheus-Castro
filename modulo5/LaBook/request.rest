@@ -1,0 +1,36 @@
+POST http://localhost:3003/user/signup
+Content-Type: application/json
+
+{
+    "name": "vitor",
+    "email": "vitor@gmail.com",
+    "password": "12345678"
+}
+
+###
+
+GET http://localhost:3003/user
+Content-Type: application/json
+
+{
+    "email": "vitor@gmail.com",
+    "password": "12345678"
+}
+
+###
+
+POST http://localhost:3003/user/post
+Content-Type: application/json
+authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImEyMjc1MmIyLTIwMDEtNDkxYi04NmJkLThlODk2ZDYwZmNiNyIsImlhdCI6MTY1MjEyNDM0MywiZXhwIjoxNjUyMTI1NzgzfQ.ulSwmdz0mZtn7zDZonlDSQGg49ab9t0BKVp7V_JTOuQ
+
+{
+   "photo": "matheus2", 
+   "description": "teste2",
+   "type": "NORMAL"   
+}
+
+
+###
+
+GET http://localhost:3003/user/post/ab2ac5f1-a59f-4f45-a54e-351240ca69a5
+Content-Type: application/json
